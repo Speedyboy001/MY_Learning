@@ -1,7 +1,4 @@
 #Phone Book
-#from tkinter.tix import InputOnly
-#from pyparsing import empty
-
 phonebook = {}
 def add():
     y = str(input("Enter the name: "))
