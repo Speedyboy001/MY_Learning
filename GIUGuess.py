@@ -2,8 +2,6 @@
 import math
 import random
 import tkinter as tk
-
-from click import command
 root = tk.Tk()
 #root.geometry("400x200")
 lower = tk.IntVar()
