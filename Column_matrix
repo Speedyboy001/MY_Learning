@@ -1,0 +1,292 @@
+#define pin1 11
+#define pin2 10
+#define pin3 9
+#define pin4  6
+#define pin5  5
+#define pin6  3
+#define pin7  7
+int brightness;
+// int fadeAmount = 255;
+
+void full_on(void);
+void Blink_all(void);
+void Blink_simultanesoluy(void);
+void low_all(void);
+void even_blink(void);
+void odd_blink(void);
+void Fadding(void);
+
+
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(pin1,OUTPUT);
+  pinMode(pin2,OUTPUT);
+  pinMode(pin3,OUTPUT);
+  pinMode(pin4,OUTPUT);
+  pinMode(pin5,OUTPUT);
+  pinMode(pin6,OUTPUT);
+  pinMode(pin7,OUTPUT);
+  Serial.begin(9600);
+}
+
+
+void loop() {
+  full_on();
+  low_all();
+  Blink_all();
+  Blink_simultanesoluy();
+  even_blink();
+  odd_blink();
+  Fadding();
+  low_all();
+}
+
+void Blink_simultanesoluy(void)
+{
+  digitalWrite(pin1,HIGH);
+  delay(500);
+  digitalWrite(pin1,LOW);
+  delay(500);
+
+  digitalWrite(pin2,HIGH);
+  delay(500);
+  digitalWrite(pin2,LOW);
+  delay(500);
+
+  digitalWrite(pin3,HIGH);
+  delay(500);
+  digitalWrite(pin3,LOW);
+  delay(500);
+
+  digitalWrite(pin4,HIGH);
+  delay(500);
+  digitalWrite(pin4,LOW);
+  delay(500);
+
+  digitalWrite(pin5,HIGH);
+  delay(500);
+  digitalWrite(pin5,LOW);
+  delay(500);
+
+  digitalWrite(pin6,HIGH);
+  delay(500);
+  digitalWrite(pin6,LOW);
+  delay(500);
+
+  digitalWrite(pin7,HIGH);
+  delay(500);
+  digitalWrite(pin7,LOW);
+  delay(500);
+
+  //reverse
+  
+  digitalWrite(pin7,HIGH);
+  delay(500);
+  digitalWrite(pin7,LOW);
+  delay(500);
+
+  digitalWrite(pin6,HIGH);
+  delay(500);
+  digitalWrite(pin6,LOW);
+  delay(500);
+
+  digitalWrite(pin5,HIGH);
+  delay(500);
+  digitalWrite(pin5,LOW);
+  delay(500);
+
+  digitalWrite(pin4,HIGH);
+  delay(500);
+  digitalWrite(pin4,LOW);
+  delay(500);
+
+  digitalWrite(pin3,HIGH);
+  delay(500);
+  digitalWrite(pin3,LOW);
+  delay(500);
+
+  digitalWrite(pin2,HIGH);
+  delay(500);
+  digitalWrite(pin2,LOW);
+  delay(500);
+
+  digitalWrite(pin1,HIGH);
+  delay(500);
+  digitalWrite(pin1,LOW);
+  delay(500);
+}
+
+
+void full_on(void)
+{
+  digitalWrite(pin1,HIGH);
+  digitalWrite(pin2,HIGH);
+  digitalWrite(pin3,HIGH);
+  digitalWrite(pin4,HIGH);
+  digitalWrite(pin5,HIGH);
+  digitalWrite(pin6,HIGH);
+  digitalWrite(pin7,HIGH);
+  delay(1000);
+}
+
+void Blink_all(void)
+{
+  digitalWrite(pin1,HIGH);
+  digitalWrite(pin2,HIGH);
+  digitalWrite(pin3,HIGH);
+  digitalWrite(pin4,HIGH);
+  digitalWrite(pin5,HIGH);
+  digitalWrite(pin6,HIGH);
+  digitalWrite(pin7,HIGH);
+  delay(500);
+
+  digitalWrite(pin1,LOW);
+  digitalWrite(pin2,LOW);
+  digitalWrite(pin3,LOW);
+  digitalWrite(pin4,LOW);
+  digitalWrite(pin5,LOW);
+  digitalWrite(pin6,LOW);
+  digitalWrite(pin7,LOW);
+  delay(500);
+}
+
+void even_blink(void)
+{
+  digitalWrite(pin2,HIGH);
+  delay(500);
+  digitalWrite(pin2,LOW);
+  delay(500);
+
+  digitalWrite(pin4,HIGH);
+  delay(500);
+  digitalWrite(pin4,LOW);
+  delay(500);
+
+  digitalWrite(pin6,HIGH);
+  delay(500);
+  digitalWrite(pin6,LOW);
+  delay(500);
+
+}
+
+void odd_blink(void)
+{
+  digitalWrite(pin1,HIGH);
+  delay(500);
+  digitalWrite(pin1,LOW);
+  delay(500);
+
+  digitalWrite(pin3,HIGH);
+  delay(500);
+  digitalWrite(pin3,LOW);
+  delay(500);
+
+  digitalWrite(pin5,HIGH);
+  delay(500);
+  digitalWrite(pin5,LOW);
+  delay(500);
+
+  digitalWrite(pin7,HIGH);
+  delay(500);
+  digitalWrite(pin7,LOW);
+  delay(500);
+
+}
+
+void low_all(void)
+{
+  digitalWrite(pin1,LOW);
+  digitalWrite(pin2,LOW);
+  digitalWrite(pin3,LOW);
+  digitalWrite(pin4,LOW);
+  digitalWrite(pin5,LOW);
+  digitalWrite(pin6,LOW);
+  digitalWrite(pin7,LOW);
+  delay(500);
+}
+
+void Fadding()
+{
+  //pin1
+    for ( brightness = 0;brightness <=255; brightness+=5)
+    {
+      analogWrite(pin1,brightness);
+      Serial.print(brightness);
+      delay(30);
+    }
+    for ( brightness = 255;brightness >=0; brightness-=5)
+    {
+      analogWrite(pin1,brightness);
+      Serial.print(brightness);
+      delay(30);
+    }
+    //pin2
+    for ( brightness = 0;brightness <=255; brightness+=5)
+    {
+      analogWrite(pin2,brightness);
+      Serial.print(brightness);
+      delay(30);
+    }
+    for ( brightness = 255;brightness >=0; brightness-=5)
+    {
+      analogWrite(pin2,brightness);
+      Serial.print(brightness);
+      delay(30);
+    }
+
+    //pin3
+    for ( brightness = 0;brightness <=255; brightness+=5)
+    {
+      analogWrite(pin3,brightness);
+      Serial.print(brightness);
+      delay(30);
+    }
+    for ( brightness = 255;brightness >=0; brightness-=5)
+    {
+      analogWrite(pin3,brightness);
+      Serial.print(brightness);
+      delay(30);
+    }
+
+    //pin4
+    for ( brightness = 0;brightness <=255; brightness+=5)
+    {
+      analogWrite(pin4,brightness);
+      Serial.print(brightness);
+      delay(30);
+    }
+    for ( brightness = 255;brightness >=0; brightness-=5)
+    {
+      analogWrite(pin4,brightness);
+      Serial.print(brightness);
+      delay(30);
+    }
+
+    //pin5
+    for ( brightness = 0;brightness <=255; brightness+=5)
+    {
+      analogWrite(pin5,brightness);
+      Serial.print(brightness);
+      delay(50);
+    }
+    for ( brightness = 255;brightness >=0; brightness-=5)
+    {
+      analogWrite(pin5,brightness);
+      Serial.print(brightness);
+      delay(50);
+    }
+
+    // pin6
+    for ( brightness = 0;brightness <=255; brightness+=5)
+    {
+      analogWrite(pin6,brightness);
+      Serial.print(brightness);
+      delay(50);
+    }
+    for ( brightness = 255;brightness >=0; brightness-=5)
+    {
+      analogWrite(pin6,brightness);
+      Serial.print(brightness);
+      delay(50);
+    }
+}
